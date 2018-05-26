@@ -1,0 +1,19 @@
+{
+  "name": "todo-server",
+  "version": "1.0.0",
+  "description": "server for personal todo",
+  "scripts": {
+    "test": "nodemon server",
+    "start": "node server"
+  },
+  "author": "vamshi9666",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.2",
+    "mongoose-auto-increment": "^5.0.1",
+    "nodemon": "^1.17.5"
+  }
+}
