@@ -10,7 +10,7 @@ exports.get_tasks = (req,res,next)=>{
 			data:result
 		})
 	})
-	.cstch(err=>{
+	.catch(err=>{
 		res.status(200).json({
 			message:"error in get_task in controller !",
 			error:err
@@ -34,6 +34,12 @@ exports.get_task = (req,res,next)=>{
 
 			})
 		}
+	})
+	.catch(err=>{
+		res.status(200).json({
+			message:"error in fetching with given id !",
+			error:err
+		})
 	})
 
 }
