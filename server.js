@@ -26,9 +26,13 @@ app.use(bodyParser.urlencoded({
   extended: true
 }))
 app.use(bodyParser.json())
-
+const userRoutes = require('./routes/user')
 const tasksRoutes = require('./routes/tasks')
+
+app.use('/',userRoutes)
 app.use('/tasks',tasksRoutes)
+
+
 
 app.listen(port,()=>{
 	console.log("server started on port "+ port)
