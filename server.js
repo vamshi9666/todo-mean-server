@@ -26,18 +26,11 @@ app.use(bodyParser.urlencoded({
   extended: true
 }))
 app.use(bodyParser.json())
-const userRoutes = require('./routes/user')
 const tasksRoutes = require('./routes/tasks')
 
-app.use('/',userRoutes)
 app.use('/tasks',tasksRoutes)
 
 
-app.use((req, res, next) => {
-  const err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
 
 
 
