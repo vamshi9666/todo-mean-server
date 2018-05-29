@@ -65,12 +65,8 @@ exports.add_task = (req,res,next)=>{
 }
 exports.update_task = (req,res,next)=>{
 	const id = req.params.id;
-	const updates = {
-		name:req.body.name,
-		startDate:req.body.startDate,
-		endDate:req.body.endDate
-	}
-	Task.update({_id:id},{$set:updates})
+	
+	Task.update({_id:id},{$set:req.body})
 	.exec()
 	.then(result=>{
 		res.status(200).json({

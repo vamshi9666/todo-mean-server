@@ -33,6 +33,14 @@ app.use('/',userRoutes)
 app.use('/tasks',tasksRoutes)
 
 
+app.use((req, res, next) => {
+  const err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
+
+
+
 
 app.listen(port,()=>{
 	console.log("server started on port "+ port)
