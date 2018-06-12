@@ -1,6 +1,6 @@
 {
-	"env":{
-		"MLAB_LINK":"mongodb://vamshi9666:unlock123@ds135750.mlab.com:35750/todo-server",
-		
-	}
-}	
+    "env": {
+        "DB":"mongodb://vamshi9666:unlock123@ds135750.mlab.com:35750/todo-server",
+        "PORT": "3001"
+    }
+}

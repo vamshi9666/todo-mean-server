@@ -1,11 +1,26 @@
 const express = require('express');
 const app  = express();
-const port = process.env.port ||3000;
+const port = process.env.PORT ||3000;
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser');
 const cors = require('cors')
+const options = {
+    //useMongoClient: true,
+    autoIndex: false, // Don't build indexes
+    reconnectTries: Number.MAX_VALUE, // Never stop trying to reconnect
+    reconnectInterval: 500, // Reconnect every 500ms
+    poolSize: 10, // Maintain up to 10 socket connections
+    // If not connected, return errors immediately rather than waiting for reconnect
+    bufferMaxEntries: 0,
+    keepAlive: 120
+}
 
-mongoose.connect("mongodb://vamshi9666:unlock123@ds135750.mlab.com:35750/todo-server");
+mongoose.connect(process.env.DB, options, function(error) {
+    if(error)
+        console.log('Error opening mongo connection')
+    else
+        console.log('Db connection opened')
+});
 
 const connection = mongoose.connection;
 
