@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
-const autoIncrement = require('mongoose-auto-increment');
-var connection = mongoose.connect(process.env.DB);
-autoIncrement.initialize(connection);
+const AutoIncrement = require('mongoose-sequence')(mongoose);
+
 
 const taskSchema = mongoose.Schema({
 	_id: {type:Number},
@@ -15,6 +14,6 @@ const taskSchema = mongoose.Schema({
 	}
 })
 
-taskSchema.plugin(autoIncrement.plugin, 'Task');
+taskSchema.plugin(AutoIncrement)
     
 module.exports = mongoose.model('Task', taskSchema);
