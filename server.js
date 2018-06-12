@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser');
 const cors = require('cors')
 
-mongoose.connect(process.env.MLAB_LINK);
+mongoose.connect("mongodb://vamshi9666:unlock123@ds135750.mlab.com:35750/todo-server");
 
 const connection = mongoose.connection;
 
@@ -28,7 +28,6 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json())
 
 const tasksRoutes = require('./routes/tasks')
-// app.use('/',loginRoutes)
 app.use('/tasks',tasksRoutes)
 
 
