@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const autoIncrement = require('mongoose-auto-increment');
-var connection = mongoose.createConnection(process.env.DB);
+var connection = mongoose.connect(process.env.DB);
 autoIncrement.initialize(connection);
 
 const taskSchema = mongoose.Schema({
