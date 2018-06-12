@@ -4,7 +4,7 @@
   "description": "server for personal todo",
   "scripts": {
     "test": "nodemon server",
-    "start": "node server"
+    "start": "node server.js"
   },
   "author": "vamshi9666",
   "license": "ISC",
