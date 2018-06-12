@@ -27,7 +27,6 @@ app.use(bodyParser.urlencoded({
 }))
 app.use(bodyParser.json())
 
-const loginRoutes = require('./routes/user')
 const tasksRoutes = require('./routes/tasks')
 // app.use('/',loginRoutes)
 app.use('/tasks',tasksRoutes)
